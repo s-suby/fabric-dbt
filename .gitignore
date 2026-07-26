@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Fabric / Power BI temporary files
+*.tmp
+*.bak
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.env
+profiles.yml
