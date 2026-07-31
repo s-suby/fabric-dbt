@@ -1,0 +1,76 @@
+
+
+version: 2
+
+models:
+
+  - name: dim_customer
+
+    columns:
+
+      - name: CustomerKey
+        tests:
+          - unique
+          - not_null
+
+      - name: CustomerID
+        tests:
+          - unique
+          - not_null
+
+
+  - name: dim_product
+
+    columns:
+
+      - name: ProductKey
+        tests:
+          - unique
+          - not_null
+
+      - name: ProductID
+        tests:
+          - unique
+          - not_null
+
+
+  - name: dim_date
+
+    columns:
+
+      - name: DateKey
+        tests:
+          - unique
+          - not_null
+
+      - name: Date
+        tests:
+          - not_null
+
+
+  - name: fact_sales
+
+    columns:
+
+      - name: CustomerKey
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: CustomerKey
+
+
+      - name: ProductKey
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: ProductKey
+
+
+      - name: OrderDateKey
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: DateKey

@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: retail
+    description: "Bronze layer from Fabric Lakehouse"
+
+    database: wh_retail_sales
+
+    schema: dbo
+
+    tables:
+
+      - name: bronze_customer
+        description: "Raw customer data"
+
+      - name: bronze_product
+        description: "Raw product data"
+
+      - name: bronze_sales_order_header
+        description: "Raw sales order header data"
+
+      - name: bronze_sales_order_detail
+        description: "Raw sales order detail data"
+
+      - name: bronze_address
+        description: "Raw address data"
+
+      - name: bronze_product_subcategory
+        description: "Raw address data"
+
+      - name: bronze_product_category
+        description: "Raw product category data"

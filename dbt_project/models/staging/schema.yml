@@ -1,0 +1,19 @@
+
+
+version: 2
+
+models:
+
+  - name: stg_customer
+    description: "Clean customer staging model"
+
+    columns:
+
+      - name: CustomerID
+        description: "Unique customer identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: AccountNumber
+        description: "Customer account reference"

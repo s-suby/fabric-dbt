@@ -1,10 +1,10 @@
-name: 'fabric-dbt'
+name: 'fabric_dbt'
 
 version: '1.0.0'
 
 config-version: 2
 
-profile: 'fabric-dbt'
+profile: 'fabric_dbt'
 
 
 model-paths: ["models"]
@@ -22,7 +22,7 @@ snapshot-paths: ["snapshots"]
 
 models:
 
-  fabric-dbt:
+  fabric_dbt:
 
     staging:
       +materialized: view
