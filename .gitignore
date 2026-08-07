@@ -13,10 +13,23 @@ logs/
 *.tmp
 *.bak
 
-# Operating system files
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# dbt
+dbt_project/target/
+dbt_project/logs/
+dbt_project/dbt_packages/
+
+# VS Code
+.vscode/
+
+# OS
 .DS_Store
 Thumbs.db
 
-# Secrets
-*.env
-profiles.yml
+# Temporary files
+*.tmp
+*.bak
