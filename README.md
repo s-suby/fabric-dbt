@@ -1,83 +1,72 @@
-# Retail Sales Analytics — Microsoft Fabric, dbt & Power BI
+# Retail Sales Analytics with Microsoft Fabric, dbt & Power BI
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi)
 ![Microsoft Fabric](https://img.shields.io/badge/Microsoft-Fabric-blue)
-![dbt](https://img.shields.io/badge/dbt-Data%20Transformation-orange)
-![SQL](https://img.shields.io/badge/SQL-TSQL-blue)
+![dbt](https://img.shields.io/badge/dbt-Analytics%20Engineering-orange)
+![SQL](https://img.shields.io/badge/SQL-T--SQL-blue)
 ![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git)
 ![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?logo=github)
 
-## Project Overview
+## 📌 Project Overview
 
-This project demonstrates an end-to-end modern analytics engineering and business intelligence solution using:
+This project demonstrates an end-to-end **Analytics Engineering and Business Intelligence solution** built using **Microsoft Fabric, dbt, SQL, Power BI, DAX, Git and GitHub**.
 
-- Microsoft Fabric
-- dbt
-- SQL
-- Power BI
-- DAX
-- Git & GitHub
+Raw retail sales data is transformed using dbt into a clean, business-ready **Star Schema**, which is then used to build an interactive Power BI executive dashboard.
 
-The project takes retail sales data through a structured transformation pipeline, develops reusable analytics models using dbt, creates a Star Schema, and delivers an executive Power BI dashboard.
+The project demonstrates the complete workflow from:
 
-The objective was to simulate a real-world analytics project from raw data through transformation, modelling, testing, documentation, and business reporting.
+**Raw Data → Transformation → Data Modelling → Testing → Power BI → Business Insights**
 
 ---
 
-# Business Objectives
+## 🎯 Business Objectives
 
-The solution was designed to answer key retail business questions:
+The solution is designed to help business users answer questions such as:
 
-- What are total sales?
-- How many orders were placed?
-- How many customers purchased?
-- How many products are available?
-- Which products generate the most sales?
-- Which product categories perform best?
+- What are total sales and order volumes?
+- How are sales performing compared with the previous year?
+- Which products generate the highest revenue?
+- Which categories and subcategories perform best?
 - How are sales trending over time?
-- How do current sales compare with previous periods?
-- What is the cumulative sales performance throughout the year?
+- What is the cumulative sales performance?
+- How are key KPIs such as Average Order Value performing?
 
 ---
 
-# Technology Stack
-
-| Technology | Purpose |
-|---|---|
-| Microsoft Fabric | Data platform and warehouse |
-| dbt | Data transformation and modelling |
-| SQL / T-SQL | Data transformation and analysis |
-| Power BI | Business intelligence and dashboard |
-| DAX | Measures and analytical calculations |
-| Git | Version control |
-| GitHub | Source control and portfolio |
-
----
-
-# Architecture
-
-The project follows a layered analytics engineering approach:
+# 🏗️ Solution Architecture
 
 ```text
-Raw Retail Data
-       |
-       v
-Microsoft Fabric
-       |
-       v
-dbt Staging Models
-       |
-       v
-dbt Intermediate Models
-       |
-       v
-dbt Mart Models
-       |
-       v
-Star Schema
-       |
-       v
-Power BI Semantic Model
-       |
-       v
-Executive Retail Sales Dashboard
+                    RAW RETAIL DATA
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │ Microsoft Fabric│
+                  │  Data Platform  │
+                  └────────┬────────┘
+                           │
+                           ▼
+                      ┌─────────┐
+                      │   dbt   │
+                      └────┬────┘
+                           │
+             ┌─────────────┴─────────────┐
+             ▼                           ▼
+      STAGING MODELS             INTERMEDIATE MODELS
+             │                           │
+             └─────────────┬─────────────┘
+                           ▼
+                     MART MODELS
+                           │
+                           ▼
+                      STAR SCHEMA
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+        DIMENSION TABLES           FACT SALES
+              │                         │
+              └────────────┬────────────┘
+                           ▼
+                       POWER BI
+                           │
+                           ▼
+                EXECUTIVE DASHBOARD
